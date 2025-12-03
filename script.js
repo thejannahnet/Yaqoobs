@@ -8,14 +8,14 @@ let ticking = false;
 
 function updateParallax() {
   const scrollY = window.scrollY;
-  
+
   // Parallax effect on hero background
   const heroBackground = document.querySelector('.hero-background');
   if (heroBackground) {
     const parallaxSpeed = 0.5;
     heroBackground.style.transform = `translateY(${scrollY * parallaxSpeed}px)`;
   }
-  
+
   // Update navbar on scroll
   const navbar = document.querySelector('.navbar');
   if (navbar) {
@@ -25,7 +25,7 @@ function updateParallax() {
       navbar.classList.remove('scrolled');
     }
   }
-  
+
   ticking = false;
 }
 
@@ -85,39 +85,39 @@ function createCursorTrail() {
 function initCursorTrail() {
   // Only enable on desktop
   if (window.innerWidth < 1024) return;
-  
+
   for (let i = 0; i < trailLength; i++) {
     cursorTrail.push(createCursorTrail());
   }
-  
+
   let mouseX = 0;
   let mouseY = 0;
   let currentX = 0;
   let currentY = 0;
-  
+
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
-  
+
   function animateTrail() {
     currentX += (mouseX - currentX) * 0.1;
     currentY += (mouseY - currentY) * 0.1;
-    
+
     cursorTrail.forEach((trail, index) => {
       const delay = index * 0.05;
       const x = currentX - (index * 2);
       const y = currentY - (index * 2);
       const opacity = 1 - (index / trailLength);
       const scale = 1 - (index / trailLength) * 0.5;
-      
+
       trail.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
       trail.style.opacity = opacity * 0.6;
     });
-    
+
     requestAnimationFrame(animateTrail);
   }
-  
+
   animateTrail();
 }
 
@@ -127,23 +127,23 @@ function initLazyLoading() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        
+
         // Load image
         if (img.dataset.src) {
           img.src = img.dataset.src;
           img.removeAttribute('data-src');
         }
-        
+
         // Add loaded class for fade-in effect
         img.addEventListener('load', () => {
           img.classList.add('loaded');
         });
-        
+
         imageObserver.unobserve(img);
       }
     });
   });
-  
+
   const lazyImages = document.querySelectorAll('img[data-src]');
   lazyImages.forEach(img => imageObserver.observe(img));
 }
@@ -153,16 +153,16 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      
+
       // Skip if it's just "#"
       if (href === '#') return;
-      
+
       e.preventDefault();
       const target = document.querySelector(href);
-      
+
       if (target) {
         const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-        
+
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth'
@@ -175,13 +175,13 @@ function initSmoothScroll() {
 // === PRODUCT CARD INTERACTIONS ===
 function initProductCards() {
   const productCards = document.querySelectorAll('.product-card');
-  
+
   productCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.zIndex = '10';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
       this.style.zIndex = '1';
     });
   });
@@ -190,7 +190,7 @@ function initProductCards() {
 // === STAGGER ANIMATION FOR GRIDS ===
 function staggerAnimation(selector, delay = 100) {
   const elements = document.querySelectorAll(selector);
-  
+
   elements.forEach((el, index) => {
     setTimeout(() => {
       el.classList.add('revealed');
@@ -198,15 +198,33 @@ function staggerAnimation(selector, delay = 100) {
   });
 }
 
-// === NAVBAR MOBILE MENU (if needed) ===
+// === NAVBAR MOBILE MENU ===
 function initMobileMenu() {
-  const menuToggle = document.querySelector('.menu-toggle');
+  const menuToggle = document.querySelector('.mobile-menu-btn');
   const navbarMenu = document.querySelector('.navbar-menu');
-  
+  const navLinks = document.querySelectorAll('.navbar-link');
+
   if (menuToggle && navbarMenu) {
+    // Toggle menu
     menuToggle.addEventListener('click', () => {
       navbarMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
+
+      // Prevent scrolling when menu is open
+      if (navbarMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
     });
   }
 }
@@ -214,13 +232,13 @@ function initMobileMenu() {
 // === NEWSLETTER FORM ===
 function initNewsletter() {
   const form = document.querySelector('.newsletter-form');
-  
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       const email = form.querySelector('input[type="email"]').value;
-      
+
       // Show success message (you can customize this)
       const successMsg = document.createElement('div');
       successMsg.className = 'newsletter-success';
@@ -231,10 +249,10 @@ function initNewsletter() {
         font-weight: var(--font-weight-medium);
         animation: fadeIn 0.5s ease;
       `;
-      
+
       form.appendChild(successMsg);
       form.querySelector('input[type="email"]').value = '';
-      
+
       setTimeout(() => {
         successMsg.remove();
       }, 3000);
@@ -251,10 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductCards();
   initMobileMenu();
   initNewsletter();
-  
+
   // Optional luxury cursor trail (comment out if too much)
   // initCursorTrail();
-  
+
   // Add initial animations
   setTimeout(() => {
     const heroContent = document.querySelector('.hero-content');
