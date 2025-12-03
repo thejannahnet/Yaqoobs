@@ -532,6 +532,9 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
 }
 
 .navbar-logo {
@@ -558,8 +561,8 @@ a:hover {
   width: 30px;
   height: 21px;
   z-index: var(--z-fixed);
-  margin-left: auto;
-  /* Force right alignment */
+  z-index: var(--z-fixed);
+  /* margin-left: auto; Removed to let space-between handle it */
 }
 
 .mobile-menu-btn .bar {
