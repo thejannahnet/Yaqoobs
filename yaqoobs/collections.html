@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore Yaqoob's luxury fashion collections - Premium outerwear, knitwear, shirts, and tailored pants.">
+    <meta name="keywords" content="luxury collections, premium fashion, designer clothing, Yaqoob's collections">
+    <title>Collections — Yaqoob's Luxury Fashion</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">YAQOOB'S</a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="index.html#story" class="navbar-link">Our Story</a></li>
+                <li><a href="index.html#newsletter" class="navbar-link">Newsletter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="height: 60vh;">
+        <img src="assets/hero-background.jpg" alt="Luxury collections" class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: var(--font-size-4xl);">Our Collections</h1>
+            <p class="hero-subtitle">Curated Excellence</p>
+            <p class="hero-description">
+                Discover our meticulously crafted collections,<br>
+                where timeless elegance meets contemporary sophistication.
+            </p>
+        </div>
+    </section>
+
+    <!-- COLLECTIONS GRID -->
+    <section class="section">
+        <div class="container">
+
+            <div class="product-grid">
+                <!-- Outerwear -->
+                <div class="product-card scroll-reveal scroll-scale-up delay-1">
+                    <div class="product-image-wrapper">
+                        <img src="assets/collection-outerwear.jpg" alt="Luxury Outerwear Collection"
+                            class="product-image" loading="lazy">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-outline">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Outerwear</h3>
+                        <p class="product-price">Premium Collection</p>
+                        <p
+                            style="color: var(--color-gray-medium); margin-top: var(--space-xs); font-size: var(--font-size-sm);">
+                            Exquisite coats and jackets crafted from the finest materials,
+                            designed to elevate your presence in any setting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Knitwear -->
+                <div class="product-card scroll-reveal scroll-scale-up delay-2">
+                    <div class="product-image-wrapper">
+                        <img src="assets/collection-knitwear.jpg" alt="Luxury Knitwear Collection" class="product-image"
+                            loading="lazy">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-outline">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Knitwear</h3>
+                        <p class="product-price">Cashmere Excellence</p>
+                        <p
+                            style="color: var(--color-gray-medium); margin-top: var(--space-xs); font-size: var(--font-size-sm);">
+                            Luxurious cashmere pieces that combine supreme comfort
+                            with sophisticated design for the discerning gentleman.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Shirts -->
+                <div class="product-card scroll-reveal scroll-scale-up delay-3">
+                    <div class="product-image-wrapper">
+                        <img src="assets/collection-shirts.jpg" alt="Luxury Shirts Collection" class="product-image"
+                            loading="lazy">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-outline">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Shirts</h3>
+                        <p class="product-price">Silk & Cotton</p>
+                        <p
+                            style="color: var(--color-gray-medium); margin-top: var(--space-xs); font-size: var(--font-size-sm);">
+                            Impeccably tailored shirts featuring premium silk and cotton fabrics,
+                            essential for the modern wardrobe.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pants -->
+                <div class="product-card scroll-reveal scroll-scale-up delay-4">
+                    <div class="product-image-wrapper">
+                        <img src="assets/collection-pants.jpg" alt="Luxury Pants Collection" class="product-image"
+                            loading="lazy">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-outline">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tailored Pants</h3>
+                        <p class="product-price">Bespoke Tailoring</p>
+                        <p
+                            style="color: var(--color-gray-medium); margin-top: var(--space-xs); font-size: var(--font-size-sm);">
+                            Precision-cut trousers that deliver unparalleled fit and comfort,
+                            showcasing masterful Italian tailoring techniques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="scroll-reveal scroll-fade-up" style="text-align: center; margin-top: var(--space-5xl);">
+                <h2 class="section-title" style="margin-bottom: var(--space-lg);">Experience Luxury</h2>
+                <p
+                    style="font-size: var(--font-size-lg); color: var(--color-gray-medium); margin-bottom: var(--space-xl); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Each piece in our collection represents the pinnacle of craftsmanship and design.
+                    Visit our atelier to discover your perfect ensemble.
+                </p>
+                <a href="index.html#newsletter" class="btn btn-primary">Join Our Circle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background-color: var(--color-secondary-black); padding: var(--space-3xl) 0 var(--space-lg);">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-3xl); margin-bottom: var(--space-3xl);">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-heading"
+                        style="font-size: var(--font-size-2xl); color: var(--color-gold); margin-bottom: var(--space-md);">
+                        YAQOOB'S</h3>
+                    <p style="color: var(--color-gray-medium); line-height: var(--line-height-relaxed);">
+                        Redefining luxury fashion through timeless elegance and impeccable craftsmanship.
+                    </p>
+                </div>
+
+                <!-- Collections -->
+                <div>
+                    <h4
+                        style="font-size: var(--font-size-lg); margin-bottom: var(--space-md); color: var(--color-white);">
+                        Collections</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Outerwear</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Knitwear</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Shirts</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Tailored
+                                Pants</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4
+                        style="font-size: var(--font-size-lg); margin-bottom: var(--space-md); color: var(--color-white);">
+                        Company</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#story"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Our Story</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Craftsmanship</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Contact</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4
+                        style="font-size: var(--font-size-lg); margin-bottom: var(--space-md); color: var(--color-white);">
+                        Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Shipping &
+                                Returns</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Size Guide</a>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Care
+                                Instructions</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#"
+                                style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div style="border-top: 1px solid var(--color-charcoal); padding-top: var(--space-lg); text-align: center;">
+                <p style="color: var(--color-gray-medium); font-size: var(--font-size-sm);">
+                    © 2025 Yaqoob's. All rights reserved. Crafted with excellence.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
