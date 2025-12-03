@@ -546,6 +546,8 @@ a:hover {
   width: 30px;
   height: 21px;
   z-index: var(--z-fixed);
+  margin-left: auto;
+  /* Force right alignment */
 }
 
 .mobile-menu-btn .bar {
