@@ -524,6 +524,12 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 100%;
+  /* Ensure it doesn't shrink */
+  margin: 0;
+  /* Override container auto margins if needed inside navbar */
+  padding: 0 var(--container-padding);
+  /* Maintain horizontal padding */
   flex-wrap: nowrap;
   /* Prevent wrapping */
 }
@@ -989,17 +995,24 @@ img.loaded {
 
   .navbar-container {
     height: 100%;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     flex-wrap: nowrap !important;
+    padding: 0 var(--space-md) !important;
+    /* Ensure padding on mobile */
   }
 
   .navbar-logo {
     font-size: 1.5rem;
     position: relative;
     left: 0;
+    margin: 0 !important;
+    /* Remove any auto margins */
+    flex: 0 0 auto;
+    /* Don't grow or shrink */
   }
 
   .mobile-menu-btn {
@@ -1007,5 +1020,7 @@ img.loaded {
     margin: 0 !important;
     position: relative;
     right: 0;
+    flex: 0 0 auto;
+    /* Don't grow or shrink */
   }
 }
