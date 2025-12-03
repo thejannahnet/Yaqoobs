@@ -503,7 +503,8 @@ a:hover {
   right: 0;
   z-index: var(--z-fixed);
   padding: var(--space-md) 0;
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth scroll animation */
   background-color: rgba(10, 10, 10, 0.85);
   /* Transparent Black */
   backdrop-filter: blur(10px);
@@ -971,4 +972,40 @@ img.loaded {
 ::-moz-selection {
   background-color: var(--color-gold);
   color: var(--color-primary-black);
+}
+
+/* === MOBILE OVERRIDES (Specific Layout Fixes) === */
+@media (max-width: 768px) {
+
+  .navbar,
+  .navbar.scrolled {
+    height: 60px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    /* Consistent background */
+  }
+
+  .navbar-container {
+    height: 100%;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    position: relative;
+    left: 0;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    margin: 0 !important;
+    position: relative;
+    right: 0;
+  }
 }
