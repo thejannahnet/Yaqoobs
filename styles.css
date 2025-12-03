@@ -880,47 +880,7 @@ a:hover {
   }
 }
 
-@media (max-width: 480px) {
-  :root {
-    --font-size-5xl: 2.5rem;
-    --font-size-4xl: 2rem;
-    --container-padding: var(--space-sm);
-  }
-
-  .hero-title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .navbar-container {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
-  .navbar-menu {
-    flex-direction: column;
-    gap: var(--space-sm);
-    text-align: center;
-    width: 100%;
-  }
-
-  .navbar.scrolled .navbar-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .navbar.scrolled .navbar-menu {
-    display: none;
-  }
-
-  .section-title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .btn {
-    padding: var(--space-sm) var(--space-lg);
-    font-size: var(--font-size-xs);
-  }
-}
+/* Removed conflicting 480px media query */
 
 /* === ADDITIONAL LUXURY EFFECTS === */
 .product-card::before {
