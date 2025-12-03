@@ -512,8 +512,17 @@ a:hover {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: var(--space-sm) 0;
-    /* Smaller padding on mobile */
+    height: 60px;
+    /* Fixed height as requested */
+    padding: 0;
+    /* Remove padding to rely on flex centering */
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-container {
+    height: 100%;
+    /* Take full height of navbar */
   }
 
   .navbar-logo {
